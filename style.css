@@ -1,0 +1,112 @@
+/* LOGIN PAGE STYLING */
+#login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full page height */
+  background: linear-gradient(135deg, #3a4f54, #254e58);
+}
+
+.login-box {
+  background: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-box h2 {
+  margin-bottom: 25px;
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.input-group {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #444;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: 0.3s;
+}
+
+.input-group input:focus {
+  border-color: #2193b0;
+  box-shadow: 0 0 6px rgba(33,147,176,0.5);
+}
+
+#login-form button {
+  background: #2193b0;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#login-form button:hover {
+  background: #176a7a;
+}
+
+
+
+form {
+    width: 80%;
+    max-width: 600px; /* Max width to avoid form being too wide on larger screens */
+    margin: 0 auto; /* Center the form */
+    padding: 20px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+}
+
+input[type="text"], input[type="email"], input[type="date"], input[type="time"] {
+    width: 100%; /* Full width of the container */
+    padding: 8px;
+    margin: 5px 0 20px 0;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%; /* Button takes the full width of the form */
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+@media screen and (max-width: 600px) {
+    form {
+        width: 95%; /* Make the form take up more space on smaller screens */
+    }
+
+    button {
+        padding: 12px 20px; /* Adjust button size for smaller screens */
+    }
+}
