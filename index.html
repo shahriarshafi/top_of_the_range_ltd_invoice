@@ -59,6 +59,7 @@
                 name="make"
                 type="text"
                 placeholder="Maker's Name"
+                required
               />
             </div>
             <div class="form-field">
@@ -68,6 +69,7 @@
                 name="model"
                 type="text"
                 placeholder="Model Name"
+                required
               />
             </div>
             <div class="form-field">
@@ -77,6 +79,7 @@
                 name="registration"
                 type="text"
                 placeholder="Registration Number"
+                required
               />
             </div>
             <div class="form-field">
@@ -86,11 +89,17 @@
                 name="mileage"
                 type="text"
                 placeholder="Mileage"
+                required
               />
             </div>
             <div class="form-field">
               <label for="date-of-sale">Date of Sale</label>
-              <input id="date-of-sale" name="date-of-sale" type="date" />
+              <input
+                id="date-of-sale"
+                name="date-of-sale"
+                type="date"
+                required
+              />
             </div>
             <div class="form-field">
               <label for="time-of-sale">Time of Sale</label>
@@ -99,6 +108,7 @@
                 name="time-of-sale"
                 type="time"
                 step="60"
+                required
               />
             </div>
           </div>
@@ -113,6 +123,7 @@
                 name="full-name"
                 type="text"
                 placeholder="Customer name"
+                required
               />
             </div>
             <div class="form-field">
@@ -122,6 +133,7 @@
                 name="address"
                 type="text"
                 placeholder="Street, City, Postcode"
+                required
               />
             </div>
             <div class="form-field">
@@ -131,6 +143,7 @@
                 name="contact-number"
                 type="text"
                 placeholder="Contact Number"
+                required
               />
             </div>
             <div class="form-field">
@@ -149,15 +162,33 @@
           <div class="form-grid">
             <div class="form-field">
               <label for="price">Price</label>
-              <input id="price" name="price" type="text" placeholder="£" />
+              <input
+                id="price"
+                name="price"
+                type="text"
+                placeholder="£"
+                required
+              />
             </div>
             <div class="form-field">
               <label for="deposit">Deposit</label>
-              <input id="deposit" name="deposit" type="text" placeholder="£" />
+              <input
+                id="deposit"
+                name="deposit"
+                type="text"
+                placeholder="£"
+                required
+              />
             </div>
             <div class="form-field">
               <label for="dues">Dues</label>
-              <input id="dues" name="dues" type="text" placeholder="£" />
+              <input
+                id="dues"
+                name="dues"
+                type="text"
+                placeholder="£"
+                required
+              />
             </div>
             <div class="form-field">
               <label for="warranty">Warranty (Days)</label>
@@ -166,6 +197,7 @@
                 name="warranty"
                 type="text"
                 placeholder="Warranty"
+                required
               />
             </div>
           </div>
@@ -176,11 +208,7 @@
     </div>
 
     <!-- Keep your logo hidden (used by PDF) -->
-    <img
-      id="logo"
-      src="./logo.png"
-      style="display: none"
-    />
+    <img id="logo" src="./logo.png" style="display: none" />
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
