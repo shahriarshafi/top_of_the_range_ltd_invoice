@@ -87,7 +87,7 @@ document
     doc.text(`Make: ${make}`, 14, 80);
     doc.text(`Model: ${model}`, 14, 90);
     doc.text(`Registration: ${registration}`, 14, 100);
-    doc.text(`Mileage: ${mileage} miles`, 14, 110);
+    doc.text(`Mileage: ${mileage} Miles`, 14, 110);
     doc.text(`(at point of sale)`, 70, 110);
     doc.text(`Date of Sale: ${dateOfSale}`, 14, 120);
     doc.text(`Time of Sale: ${timeOfSale}`, 14, 130);
@@ -140,7 +140,7 @@ document
 
     // Adjust black box for address (smaller size)
     const boxX = 100; // X position for the box
-    const boxY = 260; // Y position for the box (just below the 'Notes' title)
+    const boxY = 262; // Y position for the box (just below the 'Notes' title)
     const boxWidth = 100; // Width of the box (adjusted for smaller size)
     const boxHeight = 15; // Height of the box (reduced)
     const textX = boxX + 5; // Add padding inside the box
@@ -155,8 +155,8 @@ document
     doc.setFont("timesnewroman", "normal");
     doc.setFontSize(8); // Smaller font size for the text
     doc.text(
-      "Yard 7, Portland Lodge, Brentwood Road, Bulphan, Essex RM14 3TJ\n" +
-        "t. 020 3004 8711 | e. toprange.uk@yahoo.com | www.toprangeuk.com",
+      "        Yard 7, Portland Lodge, Brentwood Road, Bulphan, Essex RM14 3TJ\n" +
+      "        t. 020 3004 8711 | e. toprange.uk@yahoo.com | www.toprangeuk.com",
       textX,
       textY
     );
