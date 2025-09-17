@@ -123,7 +123,7 @@ document
     doc.setFontSize(9);
     doc.text(
       `Notes: T&C: 1. ${warranty} days warranty on Engine & Gearbox (No Warranty on Exterior or Interior and on any electrical issues).\n`  +
-       "                      2. Customers to bring the car back at their ownliability to be diagnosed in case of breakdown within the warranty period. \n" + 
+       "                      2. Customers to bring the car back at their own liability to be diagnosed in case of breakdown within the warranty period. \n" + 
        "                      3. If the car can not be repaired, full refund will be given deducting a charge of £250. \n" +  
        "                      4. Warranty does not cover wear-and-tear items or damage from misuse. \n" +  
        "                      5. By signing this invoice, the customer accepts these terms.\n"+ 
