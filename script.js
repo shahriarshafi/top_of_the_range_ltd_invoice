@@ -4,7 +4,7 @@ document.getElementById("login-form").addEventListener("submit", function (e) {
   const user = document.getElementById("username").value;
   const pass = document.getElementById("password").value;
 
-  if (user === "top" && pass === "223") {
+  if (user === "top" && pass === "3001") {
     // your simple check
     const login = document.getElementById("login-container");
     const invoice = document.getElementById("invoice-container");
@@ -67,8 +67,8 @@ document
     //invoice
     doc.setFont("timesnewroman", "bold");
     doc.setFontSize(15);
-    doc.text("SALES  INVOICE", 95, 55, null, null, "center");
-    doc.text("__________________", 95, 55.5, null, null, "center");
+    doc.text("USED  CAR  SALES  INVOICE", 95, 55, null, null, "center");
+    doc.text("_______________________________", 95, 55.5, null, null, "center");
 
     // Invoice Date
     doc.setFont("timesnewroman", "bold");
@@ -87,7 +87,7 @@ document
     doc.text(`Make: ${make}`, 14, 80);
     doc.text(`Model: ${model}`, 14, 90);
     doc.text(`Registration: ${registration}`, 14, 100);
-    doc.text(`Mileage: ${mileage} miles`, 14, 110);
+    doc.text(`Mileage: ${mileage} Miles`, 14, 110);
     doc.text(`(at point of sale)`, 70, 110);
     doc.text(`Date of Sale: ${dateOfSale}`, 14, 120);
     doc.text(`Time of Sale: ${timeOfSale}`, 14, 130);
@@ -118,51 +118,55 @@ document
     doc.text(`Dues: £${dues}`, 14, 220);
     //doc.text(`Full Paid: £${warranty}`, 14, 230);
 
-    doc.text(`_______________________________`, 14, 245);
-    doc.text(`Buyer's  Signature`, 30, 250);
-    doc.text(`_______________________________`, 125, 245);
-    doc.text(`Seller's  Signature`, 143, 250);
-
     // Notes Section
     doc.setFont("timesnewroman");
-    doc.setFontSize(5);
+    doc.setFontSize(9);
     doc.text(
-      `Notes:T&C: 1) ${warranty} days warranty on Engine & Gearbox (No Warranty on Exterior or\n` + 
-        "Interior and on any electrical issues.) 2) Customers to bring the car back at their own\n" +
-        "liability to be diagnosed in case of breakdown within the warranty period. 3) If the car\n" +
-        "can not be repaired, full refund will be given deducting a charge of £250. 4) Warranty \n" +
-        "does not cover wear-and-tear items or damage from misuse. 5) By signing this invoice, \n" +
-        "the customer accepts these terms. Thank you for your business with us.\n" +
-        "",
-      15,
-      265
+      `Notes: T&C: 1. ${warranty} days warranty on Engine & Gearbox (No Warranty on Exterior or Interior and on any electrical issues).\n`  +
+       "                      2. Customers to bring the car back at their own liability to be diagnosed in case of breakdown within the warranty period. \n" + 
+       "                      3. If the car can not be repaired, full refund will be given deducting a charge of £250. \n" +  
+       "                      4. Warranty does not cover wear-and-tear items or damage from misuse. \n" +  
+       "                      5. By signing this invoice, the customer accepts these terms.\n"+ 
+       "               "
+        ,
+      14,
+      230
     );
 
+    //Signature
+    doc.setFontSize(10);
+    doc.text(`_______________________________`, 14, 270);
+    doc.text(`Buyer's  Signature`, 30, 275);
+    doc.text(`_______________________________`, 140, 270);
+    doc.text(`Seller's  Signature`, 155, 275);
+
+    
+
     // Adjust black box for address (smaller size)
-    const boxX = 100; // X position for the box
-    const boxY = 260; // Y position for the box (just below the 'Notes' title)
-    const boxWidth = 100; // Width of the box (adjusted for smaller size)
-    const boxHeight = 15; // Height of the box (reduced)
-    const textX = boxX + 5; // Add padding inside the box
-    const textY = boxY + 5; // Start text 5 units down from the top of the box
+    //const boxX = 100; // X position for the box
+    //const boxY = 262; // Y position for the box (just below the 'Notes' title)
+    //const boxWidth = 100; // Width of the box (adjusted for smaller size)
+    //const boxHeight = 15; // Height of the box (reduced)
+    //const textX = boxX + 5; // Add padding inside the box
+    //const textY = boxY + 5; // Start text 5 units down from the top of the box
 
     // Draw the black box
-    doc.setFillColor(0, 0, 0); // Black color
-    doc.rect(boxX, boxY, boxWidth, boxHeight, "F"); // 'F' means filled box
+    //doc.setFillColor(0, 0, 0); // White color
+    //doc.rect(boxX, boxY, boxWidth, boxHeight, "F"); // 'F' means filled box
 
     // Add the address text inside the black box
-    doc.setTextColor(255, 255, 255); // White text color
+    doc.text(`_______________________________________________________________________________________________________`, 14, 285);
+    doc.setTextColor(0, 0, 0); // Black text color
     doc.setFont("timesnewroman", "normal");
     doc.setFontSize(8); // Smaller font size for the text
     doc.text(
-      "Yard 7, Portland Lodge, Brentwood Road, Bulphan, Essex RM14 3TJ\n" +
-        "t. 020 3004 8711 | e. toprange.uk@yahoo.com | www.toprangeuk.com",
-      textX,
-      textY
+      "  Yard 7, Portland Lodge, Brentwood Road, Bulphan, Essex RM14 3TJ | t. 020 3004 8711 | e. toprange.uk@yahoo.com | www.toprangeuk.com",
+      22,
+      290
     );
 
     // Save the PDF
-    doc.save("invoice.pdf");
+    doc.save(`${fullName}_invoice.pdf`);
   });
 
 // Smooth login → invoice transition
