@@ -1,0 +1,232 @@
+/* ===============  Design Tokens  =============== */
+:root {
+  --bg: #f4f6fb; /* neutral page bg */
+  --surface: #ffffff; /* card/page surface */
+  --text: #0f172a; /* main text */
+  --muted: #6b7280; /* secondary text */
+  --primary: #2563eb; /* blue */
+  --primary-2: #0ea5e9; /* blue-cyan blend for gradients */
+  --ring: rgba(37, 99, 235, 0.35);
+  --radius: 16px;
+  --shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
+}
+
+/* ===============  Global  =============== */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.4;
+}
+
+/* Input fields with icons */
+.input-icon {
+  position: relative;
+}
+
+.input-icon i {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b7280; /* muted gray */
+  font-size: 15px;
+}
+
+.input-icon input {
+  padding-left: 38px; /* leave space for icon */
+}
+
+/* Smooth page enter */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: none;
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+}
+.fade-in {
+  animation: fadeUp 0.45s ease both;
+}
+.fade-out {
+  animation: fadeOut 0.25s ease both;
+}
+
+/* ===============  Containers  =============== */
+.page {
+  width: 100%;
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+/* Login card */
+.card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px;
+}
+
+/* Invoice page wrapper (full-width card) */
+.sheet {
+  width: 100%;
+  max-width: 1100px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px;
+}
+
+/* Headings */
+h1,
+h2,
+h3 {
+  margin: 0 0 12px;
+}
+h1 {
+  font-size: clamp(20px, 2.4vw, 28px);
+}
+h2 {
+  font-size: clamp(18px, 2vw, 22px);
+  color: var(--muted);
+}
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0 4px;
+  color: var(--text);
+}
+.section-title::after {
+  content: "";
+  height: 2px;
+  flex: 1;
+  background: linear-gradient(90deg, #e5e7eb, transparent);
+}
+
+/* ===============  Forms  =============== */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+label {
+  font-weight: 600;
+  color: var(--text);
+}
+input {
+  appearance: none;
+  width: 100%;
+  height: 44px;
+  padding: 10px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #f9fafb;
+  font-size: 15px;
+  transition: border 0.2s, box-shadow 0.2s, background 0.2s, transform 0.05s;
+}
+input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px var(--ring);
+  background: #fff;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  height: 48px;
+  padding: 0 16px;
+  width: 100%;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  box-shadow: 0 8px 18px rgba(14, 165, 233, 0.25);
+  transition: transform 0.08s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+.btn:hover {
+  filter: saturate(1.05);
+  box-shadow: 0 10px 22px rgba(14, 165, 233, 0.3);
+}
+.btn:active {
+  transform: translateY(1px);
+}
+
+/* Spacing helpers */
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.block {
+  margin-top: 10px;
+}
+
+/* ===============  Specific areas  =============== */
+#login-container.page {
+  background: radial-gradient(
+      1200px 600px at 20% -10%,
+      rgba(14, 165, 233, 0.15),
+      transparent 60%
+    ),
+    radial-gradient(
+      1000px 500px at 110% 0%,
+      rgba(37, 99, 235, 0.15),
+      transparent 60%
+    ),
+    var(--bg);
+}
+
+/* On success, show invoice; keep both centered on all screens */
+#invoice-container {
+  display: none;
+} /* JS will switch to block */
+
+/* ===============  Responsive polish  =============== */
+@media (max-width: 640px) {
+  .card,
+  .sheet {
+    padding: 20px;
+    border-radius: 14px;
+  }
+}

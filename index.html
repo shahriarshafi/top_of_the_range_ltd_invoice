@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoice Form</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- LOGIN -->
+    <div id="login-container" class="page">
+      <div class="card fade-in">
+        <h1>Welcome back</h1>
+        <h2>Please sign in to create an invoice</h2>
+
+        <form id="login-form" class="stack">
+          <div class="form-field input-icon">
+            <i class="fa fa-user"></i>
+            <input
+              id="username"
+              type="text"
+              placeholder="Enter username"
+              
+            />
+          </div>
+
+          <div class="form-field input-icon">
+            <i class="fa fa-lock"></i>
+            <input
+              id="password"
+              type="password"
+              placeholder="Enter password"
+              
+            />
+          </div>
+
+          <button class="btn block" type="submit">Login</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- INVOICE (hidden until login) -->
+    <div id="invoice-container" class="page" style="display: none">
+      <div class="sheet" id="invoice-sheet">
+        <h1>Invoice Form</h1>
+        <div class="section-title"><strong>Invoice Details</strong></div>
+        <h1></h1>
+        <form id="invoice-form" class="stack">
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="invoicenumber">Invoice Number</label>
+              <input 
+              id="invoicenumber"
+              name="invoicenumber"
+              type="text"
+              placeholder="Invoice Number">
+            </div>
+          </div>
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="invoiceto">Invoice To</label>
+              <input 
+              id="invoiceto"
+              name="invoiceto"
+              type="text"
+              placeholder="Invoice To">
+            </div>
+          </div>
+  
+
+        <!-- Vehicle -->
+        <div class="section-title"><strong>Vehicle Details</strong></div>
+  
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="make">Make</label>
+              <input
+                id="make"
+                name="make"
+                type="text"
+                placeholder="Maker's Name"
+                
+              />
+            </div>
+            <div class="form-field">
+              <label for="model">Model</label>
+              <input
+                id="model"
+                name="model"
+                type="text"
+                placeholder="Model Name"
+                
+              />
+            </div>
+            <div class="form-field">
+              <label for="registration">Registration Number</label>
+              <input
+                id="registration"
+                name="registration"
+                type="text"
+                placeholder="Registration Number"
+                
+              />
+            </div>
+            <div class="form-field">
+              <label for="dateofregistration">Date of Registration</label>
+              <input
+                id="dateofregistration"
+                name="dateofregistration"
+                type="date"
+                placeholder="Date of Registration"
+                
+              />
+            </div>
+            <div class="form-field">
+              <label for="vinnumber">VIN/Chassis/Frame Numbers</label>
+              <input
+                id="vinnumber"
+                name="vinnumber"
+                type="text"
+                placeholder="Vin Number"
+                
+              />
+            </div>
+            <div class="form-field">
+              <label for="mileage">Mileage</label>
+              <input
+                id="mileage"
+                name="mileage"
+                type="text"
+                placeholder="Mileage"
+                
+              />
+            </div>
+            <div class="form-field">
+              <label for="date-of-sale">Date of Sale</label>
+              <input
+                id="date-of-sale"
+                name="date-of-sale"
+                type="date"
+                
+              />
+            </div>
+            <!-- <div class="form-field">
+              <label for="time-of-sale">Time of Sale</label>
+              <input
+                id="time-of-sale"
+                name="time-of-sale"
+                type="time"
+                step="60"
+              />
+            </div> -->
+          </div>
+
+          <!-- Buyer -->
+          <div class="section-title"><strong>Buyer’s Details</strong></div>
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="full-name">Full Name</label>
+              <input
+                id="full-name"
+                name="full-name"
+                type="text"
+                placeholder="Customer name"
+                
+              />
+            </div>
+            <div class="form-field">
+              <label for="address">Address</label>
+              <input
+                id="address"
+                name="address"
+                type="text"
+                placeholder="Street, City, Postcode"
+                
+              />
+            </div>
+            <div class="form-field">
+              <label for="contact-number">Contact Number</label>
+              <input
+                id="contact-number"
+                name="contact-number"
+                type="text"
+                placeholder="Contact Number"
+                
+              />
+            </div>
+            <div class="form-field">
+              <label for="email-address">Email Address</label>
+              <input
+                id="email-address"
+                name="email-address"
+                type="email"
+                placeholder="Email Address"
+              />
+            </div>
+          </div>
+
+          <!-- Payment -->
+          <div class="section-title"><strong>Payment Details</strong></div>
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="price">Price</label>
+              <input
+                id="price"
+                name="price"
+                type="text"
+                placeholder="£"
+                
+              />
+            </div>
+            <div class="form-field">
+              <label for="deposit">Deposit</label>
+              <input
+                id="deposit"
+                name="deposit"
+                type="text"
+                placeholder="£"
+                
+              />
+            </div>
+            <div class="form-field">
+              <label for="partex">Part EX</label>
+              <input
+                id="partex"
+                name="partex"
+                type="text"
+                placeholder="£"
+                
+              />
+            </div>
+            <div class="form-field">
+              <label for="settlement">Settlement</label>
+              <input
+                id="settlement"
+                name="settlement"
+                type="text"
+                placeholder="£"
+                
+              />
+            </div>
+            <div class="form-field">
+              <label for="dues">Balance Due</label>
+              <input
+                id="dues"
+                name="dues"
+                type="text"
+                placeholder="£"
+                
+              />
+            </div>
+            <div class="form-field">
+              <label for="warranty">Warranty (Days)</label>
+              <input
+                id="warranty"
+                name="warranty"
+                type="text"
+                placeholder="Warranty"
+                
+              />
+            </div>
+          </div>
+
+          <button class="btn block" type="submit">Generate Invoice</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Keep your logo hidden (used by PDF) -->
+    <img id="logo" src="./logo.png" style="display: none" />
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
